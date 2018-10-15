@@ -8,5 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository
 import java.awt.print.Pageable
 
 interface LancamentoRepository : MongoRepository<Lancamento, String> {
-  fun findByFuncionarioId(idFun: String, pageRequest: PageRequest): Page<Funcionario>
+  fun findByFuncionarioId(idFun: String, pageRequest: PageRequest): Page<Lancamento>
+
+  fun findOne(idFun: String): Lancamento
 }

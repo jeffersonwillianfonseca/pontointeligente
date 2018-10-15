@@ -30,6 +30,7 @@ class FuncionarioServiceTest {
   private val funcionarioService: FuncionarioService? = null
 
   @Before
+  @Throws(Exception::class)
   fun setUp() {
     given(funcionarioRepository?.save(any(Funcionario::class.java)))
         .willReturn(funcionario())
@@ -37,7 +38,7 @@ class FuncionarioServiceTest {
         .willReturn(funcionario())
     given(funcionarioRepository?.findByEmail(email))
         .willReturn(funcionario())
-    given(funcionarioRepository?.findOne(id)).willReturn(funcionario())
+    given(funcionarioRepository?.findOneById(id)).willReturn(funcionario())
   }
 
   @Test

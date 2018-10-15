@@ -9,5 +9,5 @@ interface FuncionarioRepository : MongoRepository<Funcionario, String> {
 
   fun findByCpf(cpf: String): Funcionario
 
-  fun findOne(id: String) : Funcionario
+  fun findOneById(id: String) : Funcionario
 }
